@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Line Chart and Scatter Plot</title>
+</head>
+<body>
+<canvas id='myChart'></canvas>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    var ctx = document.getElementById('myChart');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['January', 'February', 'March', 'April'],
+            datasets: [{
+                data:[86, 71, 13, 45],
+                label:'Candy',
+                borderColor: 'rgba(120, 120, 255, 1)'
+            }, {
+                data: [0, 21, 35, 12],
+                label:'Amazony',
+                borderColor: 'rgba(100, 200, 100, 1)'
+            }]
+        },
+        options:{
+            plugins:{
+                title: {
+                    display: true,
+                    text: 'Monthy Spending'
+                },
+                legend: {
+                    position: 'left'
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>
